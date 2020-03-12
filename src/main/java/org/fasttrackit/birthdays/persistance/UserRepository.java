@@ -1,6 +1,6 @@
 package org.fasttrackit.birthdays.persistance;
 
-import org.apache.tomcat.jni.User;
+import org.fasttrackit.birthdays.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Users {
+public class User {
     @NotNull
     @Id
     private long id;

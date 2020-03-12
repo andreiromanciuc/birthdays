@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
-public class Contacts {
+public class Contact {
     @Id
     @GeneratedValue
     private long id;
@@ -18,7 +18,7 @@ public class Contacts {
     @NotNull
     private Date date;
     @NotNull
-    private long phone;
+    private int phone;
     private String email;
     private String facebookAccount;
 
@@ -46,11 +46,19 @@ public class Contacts {
         this.lastName = lastName;
     }
 
-    public long getPhone() {
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(long phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
@@ -76,6 +84,7 @@ public class Contacts {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", date=" + date +
                 ", phone=" + phone +
                 ", email='" + email + '\'' +
                 ", facebookAccount='" + facebookAccount + '\'' +
