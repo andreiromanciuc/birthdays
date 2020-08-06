@@ -1,7 +1,7 @@
 package org.fasttrackit.birthdays.service;
 import org.fasttrackit.birthdays.domain.User;
 import org.fasttrackit.birthdays.persistance.UserRepository;
-import org.fasttrackit.birthdays.transfer.UserTransfer;
+import org.fasttrackit.birthdays.transfer.CreateUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +17,11 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User createUser(UserTransfer request) {
+    public User createUser(CreateUser request) {
         LOGGER.info("Creating user {}",request);
         User user = new User();
         user.setUserEmail(request.getUserEmail());
         user.setPassword(request.getPassword());
-        user.setRepeatPassword(request.getRepeatPassword());
         return userRepository.save(user);
     }
 

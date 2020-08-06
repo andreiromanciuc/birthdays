@@ -1,8 +1,6 @@
 package org.fasttrackit.birthdays.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -16,11 +14,15 @@ public class Contact {
     @NotNull
     private String lastName;
     @NotNull
-    private Date date;
-    @NotNull
+    private Date birthDay;
+
     private int phone;
     private String email;
     private String facebookAccount;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "contacts_for_user")
+    private User user;
 
     public long getId() {
         return id;
@@ -46,12 +48,12 @@ public class Contact {
         this.lastName = lastName;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getBirthDay() {
+        return birthDay;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setBirthDay(Date date) {
+        this.birthDay = date;
     }
 
     public int getPhone() {
@@ -84,7 +86,7 @@ public class Contact {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", date=" + date +
+                ", date=" + birthDay +
                 ", phone=" + phone +
                 ", email='" + email + '\'' +
                 ", facebookAccount='" + facebookAccount + '\'' +

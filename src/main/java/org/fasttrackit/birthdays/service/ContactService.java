@@ -23,7 +23,7 @@ public class ContactService {
         Contact contact = new Contact();
         contact.setFirstName(request.getFirstName());
         contact.setLastName(request.getLastName());
-        contact.setDate(request.getDate());
+        contact.setBirthDay(request.getDate());
         contact.setPhone(request.getPhone());
         contact.setEmail(request.getEmail());
         contact.setFacebookAccount(request.getFacebookAccount());
