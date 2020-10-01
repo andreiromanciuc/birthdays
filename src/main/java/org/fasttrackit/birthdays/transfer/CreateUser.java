@@ -5,17 +5,17 @@ import javax.validation.constraints.NotNull;
 public class CreateUser {
 
     @NotNull
-    private String userEmail;
+    private String username;
     @NotNull
     private String password;
 
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -27,10 +27,4 @@ public class CreateUser {
     }
 
 
-    @Override
-    public String toString() {
-        return "UserTransfer{" +
-                "userEmail='" + userEmail + '\'' +
-                '}';
-    }
 }

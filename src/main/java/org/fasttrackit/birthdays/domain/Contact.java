@@ -21,7 +21,7 @@ public class Contact {
     private String facebookAccount;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "contacts_for_user")
+    @JoinColumn(name = "user")
     private User user;
 
     public long getId() {
